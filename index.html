@@ -32,7 +32,7 @@
             <a href="#research" class="nav-link" onclick="handleNavClick(event, '#research')">Research</a>
             <a href="#contact" class="nav-link" onclick="handleNavClick(event, '#contact')">Contact</a>
             <a href="JUAN MINKOA RESUME.pdf" target="_blank" class="nav-link accent" data-value="Resume ↗">Resume ↗</a>
-
+            
             <button id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
                 <span class="sun-icon">✹</span>
                 <span class="moon-icon">☾</span>
@@ -174,61 +174,6 @@
             <div class="project-card">
                 <div class="project-index">01</div>
                 <div class="project-header">
-                    <div class="project-title">RNN & Matrix Calculus Optimization</div>
-                    <div class="project-tech">PYTHON / NUMPY / NO FRAMEWORKS</div>
-                </div>
-                <div class="grid-2">
-                    <p>
-                        Constructed a Vanilla Recurrent Neural Network using only linear algebra primitives. 
-                        Addressed the vanishing gradient problem through explicit eigenvalue analysis of weight 
-                        matrices during Backpropagation Through Time (BPTT).
-                    </p>
-                    <p>
-                        <strong>First Principles:</strong> Derived Jacobian matrices for hidden state vectors 
-                        to analyze gradient flow across temporal sequences.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-index">02</div>
-                <div class="project-header">
-                    <div class="project-title">OCR via Linear Algebra</div>
-                    <div class="project-tech">PYTHON / LINEAR ALG</div>
-                </div>
-                <div class="grid-2">
-                    <p>
-                        Architected a Multi-Layer Perceptron (MLP) from scratch to classify MNIST data. 
-                        Manually derived chain rules for ReLU and SoftMax activation functions.
-                    </p>
-                    <p>
-                        <strong>First Principles:</strong> Manual implementation of Stochastic Gradient 
-                        Descent (SGD) without automatic differentiation libraries.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-index">03</div>
-                <div class="project-header">
-                    <div class="project-title">Stochastic Financial Modeling</div>
-                    <div class="project-tech">PYTHON / PROPHET</div>
-                </div>
-                <div class="grid-2">
-                    <p>
-                        Engineered a stochastic predictive model to decompose financial data into trend, 
-                        seasonality, and holographic noise components.
-                    </p>
-                    <p>
-                        <strong>Methodology:</strong> Additive regression models to identify non-linear 
-                        growth saturations and variance shifts in time-series data.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-index">04</div>
-                <div class="project-header">
                     <div class="project-title">Multi-Agent AI Hedge Fund</div>
                     <div class="project-tech">PYTHON / LANGCHAIN / FASTAPI</div>
                 </div>
@@ -246,11 +191,70 @@
                     </p>
                 </div>
             </div>
+            
+            <div class="project-card">
+                <div class="project-index">02</div>
+                <div class="project-header">
+                    <div class="project-title">RNN & Matrix Calculus Optimization</div>
+                    <div class="project-tech">PYTHON / NUMPY / NO FRAMEWORKS</div>
+                </div>
+                <div class="grid-2">
+                    <p>
+                        Constructed a Vanilla Recurrent Neural Network using only linear algebra primitives. 
+                        Addressed the vanishing gradient problem through explicit eigenvalue analysis of weight 
+                        matrices during Backpropagation Through Time (BPTT).
+                    </p>
+                    <p>
+                        <strong>First Principles:</strong> Derived Jacobian matrices for hidden state vectors 
+                        to analyze gradient flow across temporal sequences.
+                        <br><br>
+                        <a href="https://github.com/Kali2007thecodemaster/Kali2007thecodemaster/blob/main/3-to-1%20RNN.ipynb" target="_blank" style="color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">View Source Code ↗</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-index">03</div>
+                <div class="project-header">
+                    <div class="project-title">OCR via Linear Algebra</div>
+                    <div class="project-tech">PYTHON / LINEAR ALG</div>
+                </div>
+                <div class="grid-2">
+                    <p>
+                        Architected a Multi-Layer Perceptron (MLP) from scratch to classify MNIST data. 
+                        Manually derived chain rules for ReLU and SoftMax activation functions.
+                    </p>
+                    <p>
+                        <strong>First Principles:</strong> Manual implementation of Stochastic Gradient 
+                        Descent (SGD) without automatic differentiation libraries.
+                        <br><br>
+                        <a href="https://github.com/Kali2007thecodemaster/Kali2007thecodemaster/blob/main/layers.ipynb" target="_blank" style="color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">View Source Code ↗</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-index">04</div>
+                <div class="project-header">
+                    <div class="project-title">Stochastic Financial Modeling</div>
+                    <div class="project-tech">PYTHON / PROPHET</div>
+                </div>
+                <div class="grid-2">
+                    <p>
+                        Engineered a stochastic predictive model to decompose financial data into trend, 
+                        seasonality, and holographic noise components.
+                    </p>
+                    <p>
+                        <strong>Methodology:</strong> Additive regression models to identify non-linear 
+                        growth saturations and variance shifts in time-series data.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="container">
-        <h3>04 / Protocol</h3>
+        <h3>05 / Protocol</h3>
         
         <div class="contact-layout reveal">
             <div class="contact-info">
@@ -294,7 +298,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
