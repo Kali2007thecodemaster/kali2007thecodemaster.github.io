@@ -27,6 +27,7 @@ window.toggleTheme = function() {
     const newTheme = isDark ? 'light' : 'dark';
     
     // Update the DOM and save preference to browser storage
+    // CSS handles showing/hiding the correct emoji automatically
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
 };
@@ -77,7 +78,7 @@ window.addEventListener('scroll', () => {
 // === HACKER TEXT SCRAMBLE EFFECT ===
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// Note: Removed the theme-toggle button from this selector so the SVG icons don't get scrambled!
+// Note: Removed the theme-toggle button from this selector so the emojis don't get scrambled!
 document.querySelectorAll(".brand-name, .nav-link.accent").forEach(element => {
     element.onmouseover = event => {
         let iterations = 0;
