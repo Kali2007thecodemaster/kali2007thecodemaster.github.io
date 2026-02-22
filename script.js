@@ -27,7 +27,6 @@ window.toggleTheme = function() {
     const newTheme = isDark ? 'light' : 'dark';
     
     // Update the DOM and save preference to browser storage
-    // CSS handles showing/hiding the correct emoji automatically
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
 };
