@@ -1,4 +1,4 @@
-/* === COLOR SYSTEM === */
+/* === COLOR SYSTEM & THEME VARIABLES === */
 :root {
     --bg: #fdfcf8;
     --text: #1a1a1a;
@@ -6,9 +6,42 @@
     --accent: #ff611a;
     --line: rgba(26, 26, 26, 0.08);
     
+    /* Dynamic Glass Variables */
+    --nav-scrolled: rgba(253, 252, 248, 0.9);
+    --scrollbar-thumb: rgba(26, 26, 26, 0.2);
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border-light: rgba(255, 255, 255, 0.8);
+    --glass-border-dark: rgba(255, 255, 255, 0.2);
+    --glass-grad-1: rgba(255, 255, 255, 0.6);
+    --glass-grad-2: rgba(255, 255, 255, 0.1);
+    --glass-hover-bg: #fff;
+    --glass-shine: rgba(255, 255, 255, 0.5);
+    --tech-bg: rgba(255, 255, 255, 0.5);
+    --tech-border: rgba(26, 26, 26, 0.1);
+    
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Manrope', sans-serif;
     --font-mono: 'Courier New', Courier, monospace;
+}
+
+[data-theme="dark"] {
+    --bg: #09090b;
+    --text: #f0f0f0;
+    --text-muted: #888888;
+    --line: rgba(255, 255, 255, 0.08);
+    
+    /* Dark Mode Glass Variables */
+    --nav-scrolled: rgba(9, 9, 11, 0.9);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border-light: rgba(255, 255, 255, 0.1);
+    --glass-border-dark: rgba(255, 255, 255, 0.02);
+    --glass-grad-1: rgba(255, 255, 255, 0.05);
+    --glass-grad-2: rgba(255, 255, 255, 0.01);
+    --glass-hover-bg: rgba(255, 255, 255, 0.05);
+    --glass-shine: rgba(255, 255, 255, 0.1);
+    --tech-bg: rgba(255, 255, 255, 0.05);
+    --tech-border: rgba(255, 255, 255, 0.1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,12 +50,12 @@
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-    background: rgba(26, 26, 26, 0.2);
+    background: var(--scrollbar-thumb);
     border-radius: 10px;
     transition: background 0.3s ease;
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
-html { scrollbar-width: thin; scrollbar-color: rgba(26, 26, 26, 0.2) transparent; }
+html { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) transparent; }
 
 /* LENIS RECOMMENDED CSS */
 html.lenis { height: auto; }
@@ -97,7 +130,7 @@ nav {
 }
 
 nav.scrolled {
-    background: rgba(253, 252, 248, 0.9);
+    background: var(--nav-scrolled);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--line);
     padding: 1rem 5%;
@@ -196,9 +229,9 @@ canvas#hero-canvas { width: 100%; height: 100%; cursor: crosshair; }
 
 /* === GLASS PANEL & LAYOUT === */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.4);
+    background: var(--glass-bg);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--glass-border-light);
     padding: 3rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
 }
@@ -226,12 +259,12 @@ canvas#hero-canvas { width: 100%; height: 100%; cursor: crosshair; }
 
 .book-card, .project-card {
     position: relative; overflow: hidden;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background: linear-gradient(135deg, var(--glass-grad-1) 0%, var(--glass-grad-2) 100%);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.8);
-    border-left: 1px solid rgba(255, 255, 255, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--glass-border-light);
+    border-left: 1px solid var(--glass-border-light);
+    border-right: 1px solid var(--glass-border-dark);
+    border-bottom: 1px solid var(--glass-border-dark);
     border-radius: 2px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -244,7 +277,7 @@ canvas#hero-canvas { width: 100%; height: 100%; cursor: crosshair; }
 .book-card::before, .project-card::before {
     content: ''; position: absolute;
     top: 0; left: -150%; width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, var(--glass-shine), transparent);
     transform: skewX(-25deg); transition: 0.7s;
     pointer-events: none; z-index: 1;
 }
@@ -253,7 +286,7 @@ canvas#hero-canvas { width: 100%; height: 100%; cursor: crosshair; }
 .book-card:hover, .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
-    border-top-color: #fff;
+    border-top-color: var(--glass-border-light);
 }
 
 .book-arrow {
@@ -269,7 +302,7 @@ canvas#hero-canvas { width: 100%; height: 100%; cursor: crosshair; }
 
 .project-header {
     display: flex; justify-content: space-between; align-items: baseline;
-    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+    border-bottom: 1px solid var(--line);
     padding-bottom: 1.5rem; margin-bottom: 2rem;
     position: relative; z-index: 2;
 }
@@ -277,9 +310,9 @@ canvas#hero-canvas { width: 100%; height: 100%; cursor: crosshair; }
 .project-card:hover .project-title { color: var(--accent); }
 .project-tech {
     font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
-    color: var(--text-muted); border: 1px solid rgba(26, 26, 26, 0.1);
+    color: var(--text-muted); border: 1px solid var(--tech-border);
     padding: 0.4rem 0.8rem; border-radius: 100px;
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--tech-bg);
 }
 .project-index {
     position: absolute; top: -1rem; right: 1.5rem;
@@ -295,11 +328,11 @@ canvas#hero-canvas { width: 100%; height: 100%; cursor: crosshair; }
 .contact-row {
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.5rem; border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.4);
+    background: var(--glass-bg);
     text-decoration: none; color: var(--text);
     transition: all 0.3s;
 }
-.contact-row:hover { background: #fff; border-color: var(--accent); padding-left: 2rem; }
+.contact-row:hover { background: var(--glass-hover-bg); border-color: var(--accent); padding-left: 2rem; }
 .contact-label { font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.1em; }
 .contact-value { font-family: var(--font-mono); font-weight: 700; color: var(--text); transition: color 0.3s; }
 .contact-row:hover .contact-value { color: var(--accent); }
