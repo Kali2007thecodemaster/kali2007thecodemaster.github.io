@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan Kaelig Minkoa | Mathematical Engineering</title>
     
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -27,6 +32,7 @@
             <a href="#research" class="nav-link" onclick="handleNavClick(event, '#research')">Research</a>
             <a href="#contact" class="nav-link" onclick="handleNavClick(event, '#contact')">Contact</a>
             <a href="JUAN MINKOA RESUME.pdf" target="_blank" class="nav-link accent" data-value="Resume ↗">Resume ↗</a>
+            <a id="theme-toggle" class="nav-link" style="cursor: pointer;" onclick="toggleTheme()" data-value="Dark Mode">Dark Mode</a>
         </div>
     </nav>
 
@@ -104,7 +110,7 @@
                 </div>
             </a>
 
-            <a href="https://www.amazon.ca/Putnam-Beyond-R%C4%83zvan-Gelca/dp/3319589865/ref=sr_1_1?crid=1B42DRGEJY4N5&dib=eyJ2IjoiMSJ9.MxeZFYnr2W985yr9QbnnNA.uAv8EW7yzlUAAJaz_3NqjB8v0fOKNIX7ve_dymwSrhk&dib_tag=se&keywords=putnam+and+beyond&qid=1768886154&sprefix=putna%2Caps%2C230&sr=8-1" target="_blank" rel="noopener noreferrer" class="book-card">
+            <a href="https://www.amazon.ca/Putnam-Beyond-R%C4%83zvan-Gelca/dp/3319589865" target="_blank" rel="noopener noreferrer" class="book-card">
                 <div>
                     <div class="book-title">Putnam and Beyond<span class="book-arrow">↗</span></div>
                     <div class="book-author">Gelca, Andreescu</div>
@@ -212,6 +218,27 @@
                     <p>
                         <strong>Methodology:</strong> Additive regression models to identify non-linear 
                         growth saturations and variance shifts in time-series data.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-index">04</div>
+                <div class="project-header">
+                    <div class="project-title">Multi-Agent AI Hedge Fund</div>
+                    <div class="project-tech">PYTHON / LANGCHAIN / FASTAPI</div>
+                </div>
+                <div class="grid-2">
+                    <p>
+                        Architected a multi-agent quantitative trading terminal using DeepSeek R1 and V3. 
+                        The system executes core-satellite portfolio construction by synthesizing technical indicators, 
+                        macro-regime detection (VIX & yield curves), and Kelly criterion sizing.
+                    </p>
+                    <p>
+                        <strong>Methodology:</strong> Separated alpha generation from risk management to enforce checks and balances. 
+                        Includes a live backend that serves dynamic Monte Carlo simulations and strictly controls drawdown probabilities.
+                        <br><br>
+                        <a href="https://github.com/Kali2007thecodemaster/Kali2007thecodemaster/blob/main/ai-hedge-fund-beta.ipynb" target="_blank" style="color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">View Source Code ↗</a>
                     </p>
                 </div>
             </div>
