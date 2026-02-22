@@ -46,38 +46,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* === THEME TOGGLE BUTTON === */
-.theme-toggle-btn {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--text);
-    padding: 0.5rem 1.2rem;
-    border: 1px solid var(--line);
-    border-radius: 50px; /* Elegant rounded pill shape */
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.theme-toggle-btn:hover {
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--text);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px var(--line);
-}
-
-.theme-toggle-btn:active {
-    transform: translateY(0);
-}
 
 /* === CUSTOM SCROLLBAR === */
 ::-webkit-scrollbar { width: 6px; }
@@ -403,5 +372,39 @@ footer { padding: 4rem 0; text-align: center; font-family: var(--font-mono); fon
     h1 { font-size: 3.5rem; }
     .project-index { font-size: 5rem; top: 1rem; }
 }
+
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle-btn {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 50px; /* Elegant rounded pill shape */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--line);
+}
+
+.theme-toggle-btn:active {
+    transform: translateY(0);
+}
+
 
 
