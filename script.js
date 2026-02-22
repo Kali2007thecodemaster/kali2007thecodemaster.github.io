@@ -21,21 +21,24 @@ function handleNavClick(e, targetId) {
     lenis.scrollTo(targetId);
 }
 
-// === THEME TOGGLE (NEW) ===
-function toggleTheme() {
+// === THEME TOGGLE ENGINE ===
+window.toggleTheme = function() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const newTheme = isDark ? 'light' : 'dark';
+    
+    // Update the DOM and save preference to browser storage
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
+    // Update the button text and scramble target data
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         themeBtn.innerText = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
         themeBtn.dataset.value = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
     }
-}
+};
 
-// Initialize button text on load based on saved theme
+// Initialize the correct button text when the page loads
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     const themeBtn = document.getElementById('theme-toggle');
@@ -217,3 +220,4 @@ function initCanvas() {
     }
     animate();
 }
+
