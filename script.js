@@ -29,23 +29,12 @@ window.toggleTheme = function() {
     // Update the DOM and save preference to browser storage
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-    
-    // Update the button text and scramble target data
-    const themeBtn = document.getElementById('theme-toggle');
-    if (themeBtn) {
-        themeBtn.innerText = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
-        themeBtn.dataset.value = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
-    }
 };
 
-// Initialize the correct button text when the page loads
+// Initialize the correct theme when the page loads
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
-    const themeBtn = document.getElementById('theme-toggle');
-    if (themeBtn) {
-        themeBtn.innerText = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
-        themeBtn.dataset.value = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
-    }
+    document.documentElement.setAttribute('data-theme', savedTheme);
 });
 
 // === TYPEWRITER EFFECT ===
@@ -88,7 +77,8 @@ window.addEventListener('scroll', () => {
 // === HACKER TEXT SCRAMBLE EFFECT ===
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-document.querySelectorAll(".brand-name, .nav-link.accent, #theme-toggle").forEach(element => {
+// Note: Removed the theme-toggle button from this selector so the SVG icons don't get scrambled!
+document.querySelectorAll(".brand-name, .nav-link.accent").forEach(element => {
     element.onmouseover = event => {
         let iterations = 0;
         const interval = setInterval(() => {
@@ -220,4 +210,3 @@ function initCanvas() {
     }
     animate();
 }
-
