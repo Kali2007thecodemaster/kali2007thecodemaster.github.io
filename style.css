@@ -373,7 +373,7 @@ footer { padding: 4rem 0; text-align: center; font-family: var(--font-mono); fon
     .project-index { font-size: 5rem; top: 1rem; }
 }
 
-/* === THEME TOGGLE BUTTON (ICON VERSION) === */
+/* === THEME TOGGLE BUTTON (EMOJI VERSION) === */
 .theme-toggle-btn {
     width: 40px;
     height: 40px;
@@ -389,13 +389,14 @@ footer { padding: 4rem 0; text-align: center; font-family: var(--font-mono); fon
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem; /* Sizes the emoji perfectly */
 }
 
 .theme-toggle-btn:hover {
     background: var(--text);
     color: var(--bg);
     border-color: var(--text);
-    transform: translateY(-2px) rotate(15deg); /* Slight rotation on hover */
+    transform: translateY(-2px) rotate(15deg);
     box-shadow: 0 8px 20px var(--line);
 }
 
@@ -403,12 +404,13 @@ footer { padding: 4rem 0; text-align: center; font-family: var(--font-mono); fon
     transform: translateY(0) rotate(0);
 }
 
-.theme-toggle-btn svg {
-    width: 18px;
-    height: 18px;
+/* Ensure the span aligns perfectly in the center */
+.theme-toggle-btn span {
+    line-height: 1;
+    margin-top: 2px; /* Slight optical adjustment for vertical centering */
 }
 
-/* Swap icons based on the active theme */
+/* Swap emojis based on the active theme */
 [data-theme="light"] .sun-icon { display: none; }
 [data-theme="light"] .moon-icon { display: block; }
 
