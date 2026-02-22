@@ -21,6 +21,30 @@ function handleNavClick(e, targetId) {
     lenis.scrollTo(targetId);
 }
 
+// === THEME TOGGLE (NEW) ===
+function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        themeBtn.innerText = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        themeBtn.dataset.value = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+}
+
+// Initialize button text on load based on saved theme
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        themeBtn.innerText = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        themeBtn.dataset.value = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+});
+
 // === TYPEWRITER EFFECT ===
 const text = "Machine Learning\nEnthusiast.";
 const typeElement = document.getElementById('typewriter');
@@ -61,7 +85,7 @@ window.addEventListener('scroll', () => {
 // === HACKER TEXT SCRAMBLE EFFECT ===
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-document.querySelectorAll(".brand-name, .nav-link.accent").forEach(element => {
+document.querySelectorAll(".brand-name, .nav-link.accent, #theme-toggle").forEach(element => {
     element.onmouseover = event => {
         let iterations = 0;
         const interval = setInterval(() => {
@@ -178,10 +202,15 @@ function initCanvas() {
                 }
             }
         }
+        
+        // Dynamically adjust node color based on active theme
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const nodeColor = isDark ? '240, 240, 240' : '26, 26, 26';
+
         projectedPoints.forEach(p => {
             ctx.beginPath();
             ctx.arc(p.x, p.y, 1.5 * p.scale, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(26, 26, 26, ${p.opacity * 0.8})`;
+            ctx.fillStyle = `rgba(${nodeColor}, ${p.opacity * 0.8})`;
             ctx.fill();
         });
         requestAnimationFrame(animate);
